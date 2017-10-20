@@ -6204,7 +6204,7 @@ line-height: 50px;
     position: absolute;
     top: 67px;
     left: 0px;
-    display: none;
+/*    display: none;*/
     z-index: 1;
     cursor: pointer;
     background: #ff6000;
@@ -6237,6 +6237,29 @@ line-height: 50px;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
+#super-left-panel {
+    width: 350px;
+}
+.map-fix {
+    width: calc(100% - 350px) !important;
+}
+.map-full {
+    width: 100%;
+}
+.map-over {
+    width: calc(100% + 350px);
+}
+@media screen and (min-width: 64.063em) {
+    #toogle_btn {
+        top:2px;
+    }
+    #storeLocator__topHalf .large-9 {
+        width: calc(100% - 350px); 
+    }
+    #storeLocator__topHalf {
+        margin-top: 60px;
+    }
+}
 
 @media screen and (max-width: 64em) {
     #toogle_btn {
@@ -6250,9 +6273,6 @@ line-height: 50px;
     }
     .large-9 {
         width: 100%;
-    }
-    .map-fix {
-        width: calc(100% - 350px) !important;
     }
     .store-list-item {
         width: 100%;
