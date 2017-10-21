@@ -485,7 +485,9 @@ function ssf_wp_head_scripts() {
 	
 		 
 		}
-		
+
+		// print " <script src='//code.jquery.com/jquery-1.12.4.js'></script>";
+		// print " <script src='//code.jquery.com/ui/1.12.1/jquery-ui.js'></script>";
 		
 		/**.** Marker distance addon **.**/
 		$addonDistance=$wpdb->get_results("SELECT * FROM ".SSF_WP_ADDON_TABLE." WHERE ssf_wp_addon_name='ssf-distance-addon-wp' AND ssf_wp_addon_status='on' ", ARRAY_A);
@@ -521,8 +523,10 @@ function ssf_wp_head_scripts() {
 		}
 			
 		if($fileCounter==0)
-		{ wp_enqueue_script( 'mega-superstorfinder' , SSF_WP_JS_BASE.'/mega-superstorefinder.js' , array( 'jquery' ) , '1.0' , true ); }
-
+		{ 
+			wp_enqueue_script( 'mega-superstorfinder' , SSF_WP_JS_BASE.'/mega-superstorefinder.js' , array( 'jquery' ) , '1.0' , true ); 
+		}
+		
 		// mega locator
 
 
@@ -2964,8 +2968,8 @@ $zip_panel='';
 									  <div class='store-locator__map-status__inner' id='storeLocator__mapStatus__inner'> &nbsp;</div>
 									  <div class='store-locator__map-status__closer' id='storeLocator__mapStatus__closer'> &nbsp;</div>
                                   </div>
-                                  <button type='button' id='toogle_btn' class='btn button-primary'>
-                                  	<i class='fa fa-angle-double-right' aria-hidden='true'></i>
+                                  <button type='button' id='toogle_btn' class='btn button-primary toogle-btn-active'>
+                                  	<i class='fa fa-angle-double-left' aria-hidden='true'></i>
                                   </button>
                                  <div class='store-locator-map' id='storeLocatorMap'> &nbsp;</div>
                               </div>

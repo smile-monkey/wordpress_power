@@ -6202,7 +6202,7 @@ line-height: 50px;
 }
 #toogle_btn {
     position: absolute;
-    top: 67px;
+    top: 115px;
     left: 0px;
 /*    display: none;*/
     z-index: 1;
@@ -6224,6 +6224,7 @@ line-height: 50px;
     margin: 0;
     padding: 5px 0px;
     text-shadow: rgba(0,0,0,0.5) 0px 1px 3px;
+    opacity: 0.8;
 }
 #toogle_btn i {
     font-size: 32px;
@@ -6231,9 +6232,9 @@ line-height: 50px;
     padding-right: 10px;
     color: #fff;
 }
-#toogle_btn:hover, #toogle_btn:active{
-    background-color: #cc4c00;
-    border-color: #993900;
+.toogle-btn-active {
+    background-color: #cc4c00 !important;
+    border-color: #993900 !important;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
@@ -6244,17 +6245,17 @@ line-height: 50px;
     width: calc(100% - 350px) !important;
 }
 .map-full {
-    width: 100%;
+    width: 100% !important;
 }
 .map-over {
-    width: calc(100% + 350px);
+    /*width: calc(100% + 350px);*/
+}
+.large-9 {
+    width: 100%;
 }
 @media screen and (min-width: 64.063em) {
     #toogle_btn {
-        top:2px;
-    }
-    #storeLocator__topHalf .large-9 {
-        width: calc(100% - 350px); 
+        top:50px;
     }
     #storeLocator__topHalf {
         margin-top: 60px;
@@ -6266,13 +6267,10 @@ line-height: 50px;
         display: block;
     }
     #super-left-panel {
-        width: 350px !important;
-        left: -350px;
         margin-top: 65px;
-        z-index: 1000;
     }
     .large-9 {
-        width: 100%;
+        left: 350px;
     }
     .store-list-item {
         width: 100%;

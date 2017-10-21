@@ -6229,39 +6229,39 @@ if (window.innerWidth >1024) {
     jQuery('#toogle_btn i').removeClass('fa-angle-double-right');
     jQuery('#toogle_btn').addClass('active');
 }
+jQuery('#storeLocator__topHalf .large-9').addClass('map-fix');
 
 jQuery("#toogle_btn").on("click", function(e){
     if (window.innerWidth >1024) {
-        var map_left_active = '-350px';
-        var map_left_inactive = '0px';
-    }else {
         var map_left_active = '0px';
-        var map_left_inactive = '350px';
+    }else {
+        var map_left_active = '350px';
     }
-    if (jQuery('#toogle_btn').hasClass('active')){
+    if (jQuery('#toogle_btn').hasClass('toogle-btn-active')){
          
-        jQuery('#toogle_btn').removeClass('active');
-        
-        jQuery('#super-left-panel').animate({left:'-350px'},{ duration: 500, easing: "linear"});
-        jQuery('#storeLocator__topHalf .large-9').animate({left:map_left_active},{ duration: 500, easing: "linear"});
-        
-        jQuery('#storeLocatorMap').removeClass('map-fix');
-        jQuery('#storeLocatorMap').addClass('map-full');
-        jQuery('#storeLocator__topHalf .large-9').removeClass('map-fix');
-        jQuery('#storeLocator__topHalf .large-9').addClass('map-full');
-        jQuery('#storeLocatorMap').addClass('map-over');
-
+        jQuery('#toogle_btn').removeClass('toogle-btn-active');
         jQuery('#toogle_btn i').removeClass('fa-angle-double-left');
         jQuery('#toogle_btn i').addClass('fa-angle-double-right');
+        
+        // jQuery('#super-left-panel').hide('drop',{},500);
+        jQuery('#super-left-panel').hide(500);
+
+        jQuery('#storeLocator__topHalf .large-9').animate({left:'0px',with:'100%'},{ duration: 500, easing: "linear"});
+        jQuery('#storeLocator__topHalf .large-9').addClass('map-full');
+        jQuery('#storeLocator__topHalf .large-9').removeClass('map-fix');
 
     }else {
 
-        jQuery('#toogle_btn').addClass('active');
-        jQuery('#super-left-panel').animate({left:'0px'},{ duration: 500, easing: "linear"});      
-        jQuery('#storeLocator__topHalf .large-9').animate({left:map_left_inactive},{ duration: 500, easing: "linear",complete: function(){jQuery('#storeLocator__topHalf .large-9').addClass('map-fix');jQuery('#storeLocator__topHalf .large-9').removeClass('map-full');jQuery('#storeLocatorMap').removeClass('map-over');}});       
-        
+        jQuery('#toogle_btn').addClass('toogle-btn-active');
         jQuery('#toogle_btn i').addClass('fa-angle-double-left');
-        jQuery('#toogle_btn i').removeClass('fa-angle-double-right');        
+        jQuery('#toogle_btn i').removeClass('fa-angle-double-right');
+      
+        // jQuery('#super-left-panel').show('drop',{},500);
+        jQuery('#super-left-panel').show(500);
+
+        jQuery('#storeLocator__topHalf .large-9').animate({left:map_left_active},{ duration: 500, easing: "linear"});       
+        jQuery('#storeLocator__topHalf .large-9').removeClass('map-full');
+        jQuery('#storeLocator__topHalf .large-9').addClass('map-fix');
 
     }
 });
