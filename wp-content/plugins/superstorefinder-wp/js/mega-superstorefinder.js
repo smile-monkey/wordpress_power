@@ -1262,7 +1262,7 @@ jQuery.getScript('https://maps.googleapis.com/maps/api/js?'+googleApi+'sensor=fa
 
                 }
 
-
+                window.google_map = map.self;
 
             map.infobox.self = new InfoBox({
 
@@ -6252,9 +6252,10 @@ jQuery("#toogle_btn").on("click", function(e){
         
         jQuery('#storeLocatorMap').removeClass('map-fix');
         jQuery('#storeLocatorMap').addClass('map-full');
-        if (window.innerWidth >1024) 
+        if (window.innerWidth >1024){
             jQuery('#storeLocatorMap').addClass('map-over');
-
+            google.maps.event.trigger(window.google_map,'resize');
+        }
 
     }else {
 
