@@ -485,9 +485,7 @@ function ssf_wp_head_scripts() {
 	
 		 
 		}
-
-		// print " <script src='//code.jquery.com/jquery-1.12.4.js'></script>";
-		// print " <script src='//code.jquery.com/ui/1.12.1/jquery-ui.js'></script>";
+		
 		
 		/**.** Marker distance addon **.**/
 		$addonDistance=$wpdb->get_results("SELECT * FROM ".SSF_WP_ADDON_TABLE." WHERE ssf_wp_addon_name='ssf-distance-addon-wp' AND ssf_wp_addon_status='on' ", ARRAY_A);
@@ -523,10 +521,8 @@ function ssf_wp_head_scripts() {
 		}
 			
 		if($fileCounter==0)
-		{ 
-			wp_enqueue_script( 'mega-superstorfinder' , SSF_WP_JS_BASE.'/mega-superstorefinder.js' , array( 'jquery' ) , '1.0' , true ); 
-		}
-		
+		{ wp_enqueue_script( 'mega-superstorfinder' , SSF_WP_JS_BASE.'/mega-superstorefinder.js' , array( 'jquery' ) , '1.0' , true ); }
+
 		// mega locator
 
 
@@ -3092,66 +3088,67 @@ $zip_panel='';
                            <div class='section pad-bottom-2x medium-pad-bottom-4x store-locator-section' style='display:none;' id='store-locator-section-bg'>
 							  $superstore_ui
                               <div class='store-locator__infobox store-locator__infobox--main store-locator__infobox--in-map' id='storeLocatorInfobox'>
-								  <div id='info-img' class='info-img' style='position: relative;cursor: pointer;background-size: cover;' data-plugins='open-modal' data-template='modal-photo-viewer'></div>
-	                              <div class='infobox__inner'>
-	                                    <div class='infobox__closer'> &nbsp;</div>
-	                                    <div class='infobox__body'>
-	                                       <div class='infobox__row infobox__title store-location'> Placeholder store name</div>
-										   $distanceInInfo
-										   <div class='store-storeReview'> </div>
-	                                       <div class='infobox__row store-address'> Placeholder for address</div>
-										 <div class='infobox__row'>
-										 	$state_panel
-										 	$zip_panel
-										 	<div  id='info-website' class='infobox__subtitle' > $website_label</div>
-			                                    <div class='store-website'>
-			                                        <div class='infobox__subtitle'> $website_label</div>
-			                                          Website placeholder
-			                                    </div>
-												<div  id='info-email' class='infobox__subtitle' > $email_label</div>
-												<div class='store-email'>
-			                                        <div class='infobox__subtitle'> $email_label</div>
-			                                          Email placeholder
-			                                    </div>
-												<div  id='info-tel' class='infobox__subtitle' > $phone_label</div>
-												<div class='store-tel'>
-			                                        <div class='infobox__subtitle'> $phone_label</div>
-			                                          Telephone placeholder
-			                                    </div>
-												<div  id='info-fax' class='infobox__subtitle' > $fax_label</div>
-												<div class='store-fax'>
-			                                        <div class='infobox__subtitle'> $fax_label</div>
-			                                          Fax placeholder
-			                                    </div>
-	 											<div id='info-description' class='infobox__subtitle'> $description_label</div>
-												<div class='store-description'>
-	                                          		Description placeholder
-	                                       		</div>
-												<div id='info-operating-hours' class='infobox__subtitle info-operatinghour'>
-													<div  class='info__toggler actives' style='cursor:pointer;' id='openhouropen'></div> 
-													<div style='display:inline-block;'>$hours_label</div>
-												</div>
-												<div class='info__toggler-contents togglerify-slider infobox__row store-operating-hours' style=''></div>
-					   							<div id='info-exturl' class='infobox__subtitle' ></div>
-											    <div class='store-exturl'>
-												  <div class='infobox__subtitle'> $exturl_label</div>
-												  	Ext placeholder
-											    </div>
-					   							<div class='store-contact-us' id='store-contact-us'>
-													<a onclick='showConatctPopup();'  data-plugins='open-modal' data-template='modal-photo-viewer'>
-														<div class='btn-super-info'> $contact_us_label</div>
-													</a>
-												</div>
-												<div style='clear:both;'>&nbsp;</div>
-											</div>
-											$ratingLink
-	                    					<a id='dirbutton' target='new' class='infobox__row infobox__cta' href='#directions'>$direction_label </a>
-					    					<a class='infobox__row infobox__stv' href='#streetview'>$streetview_label</a>
-										</div>
-								  </div>
-							  </div>
-							</div>
-						</div>
+							  <div id='info-img' class='info-img' style='position: relative;cursor: pointer;background-size: cover;' data-plugins='open-modal' data-template='modal-photo-viewer'></div>
+                                 <div class='infobox__inner'>
+                                    <div class='infobox__closer'> &nbsp;</div>
+                                    <div class='infobox__body'>
+                                       <div class='infobox__row infobox__title store-location'> Placeholder store name</div>
+									   $distanceInInfo
+									   <div class='store-storeReview'> </div>
+                                       <div class='infobox__row store-address'> Placeholder for address</div>
+							 <div class='infobox__row'>
+							 $state_panel
+							 $zip_panel
+							 <div  id='info-website' class='infobox__subtitle' > $website_label</div>
+                                       <div class='store-website'>
+                                          <div class='infobox__subtitle'> $website_label</div>
+                                          Website placeholder
+                                       </div>
+							<div  id='info-email' class='infobox__subtitle' > $email_label</div>
+							<div class='store-email'>
+                                          <div class='infobox__subtitle'> $email_label</div>
+                                          Email placeholder
+                                       </div>
+							<div  id='info-tel' class='infobox__subtitle' > $phone_label</div>
+							<div class='store-tel'>
+                                          <div class='infobox__subtitle'> $phone_label</div>
+                                          Telephone placeholder
+                                       </div>
+							<div  id='info-fax' class='infobox__subtitle' > $fax_label</div>
+							<div class='store-fax'>
+                                          <div class='infobox__subtitle'> $fax_label</div>
+                                          Fax placeholder
+                                       </div>		   
+									   
+ 					<div id='info-description' class='infobox__subtitle'> $description_label</div>
+					<div class='store-description'>
+                                          Description placeholder
+                                       </div>
+					<div id='info-operating-hours' class='infobox__subtitle info-operatinghour'>
+						<div  class='info__toggler actives' style='cursor:pointer;' id='openhouropen'></div> 
+						<div style='display:inline-block;'>$hours_label</div></div>
+					<div class='info__toggler-contents togglerify-slider infobox__row store-operating-hours' style=''>
+				 </div>
+				   <div  id='info-exturl' class='infobox__subtitle' > </div>
+				   <div class='store-exturl'>
+					  <div class='infobox__subtitle'> $exturl_label</div>
+					  Ext placeholder
+				   </div>
+				   <div class='store-contact-us' id='store-contact-us'>
+							<a onclick='showConatctPopup();'  data-plugins='open-modal' data-template='modal-photo-viewer'>
+							<div class='btn-super-info'> $contact_us_label</div>
+						</a></div>	
+				   
+					<div style='clear:both;'>&nbsp;</div>
+					</div>
+					$ratingLink
+                    <a id='dirbutton' target='new' class='infobox__row infobox__cta' href='#directions'>$direction_label </a>
+				    <a class='infobox__row infobox__stv' href='#streetview'>$streetview_label</a>
+					</div>
+					</div>
+					</div>
+					</div>
+					</div>
 					</div>
 				  <div class='main-popup-holder' id='mainPopupHolder'  style='display:none;'>
                      <div class='ssf-popup' id='modernBrowserPopup'>
